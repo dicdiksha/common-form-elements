@@ -1,0 +1,30 @@
+{
+  "name": "@dictrigyn/common-form-elements",
+  "version": "5.1.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dictrigyn/common-form-elements.git"
+  },
+  "peerDependencies": {
+    "@angular/common": "^11.2.14",
+    "@angular/core": "^11.2.14",
+    "@angular/forms": "^11.2.14",
+    "@project-sunbird/client-services": "3.6.x",
+    "lodash-es": "^4.17.15"
+  },
+  "peerDependenciesMeta": {
+    "@project-sunbird/ckeditor-build-classic": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "immutable": "^4.0.0-rc.12",
+    "moment": "^2.29.1",
+    "tslib": "^2.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}
+
