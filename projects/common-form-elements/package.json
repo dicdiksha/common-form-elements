@@ -1,9 +1,9 @@
 {
-  "name": "@dictrigyn/common-form-elements",
+  "name": "@dicdiksha/common-form-elements",
   "version": "5.1.2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dictrigyn/common-form-elements.git"
+    "url": "https://github.com/dicdiksha/common-form-elements.git"
   },
   "peerDependencies": {
     "@angular/common": "^11.2.14",
