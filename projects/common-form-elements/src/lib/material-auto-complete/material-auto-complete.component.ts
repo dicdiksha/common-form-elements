@@ -98,6 +98,8 @@ export class MaterialAutoCompleteComponent implements OnInit, OnChanges {
       this.selectedOptions.splice(i, 1);
     }
     this.formControlRef.setValue(this.selectedOptions);
+    this.formControlRef.value('');
+    
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -151,7 +153,7 @@ export class MaterialAutoCompleteComponent implements OnInit, OnChanges {
         takeUntil(this.dispose$)
       ).subscribe();
     }
-    this.localFrmControl.patchValue(this.default);
+    this.localFrmControl.patchValue('');
     this.setTempValue(this.default);
   }
 
