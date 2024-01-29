@@ -89,3 +89,22 @@ functionName(config: FieldConfig<any>, initial = false): FieldConfigOptionsBuild
 | release-5.0.1     |        5.0.1        |      Ng V9      |
 | release-5.1.0_v10 |        5.1.0        |      Ng V10     |
 | release-5.1.0_v11 |        5.1.1        |      Ng V11     |
+
+
+
+
+## Latest Installation, Build and Publish Process 2024
+
+##Installation
+1. Go inside folder and use npm command to install npm dependency (npm i).
+2. Check suitable node version in package.json in face any error during installation.
+
+##Build
+1. Upgrade package version
+2. Use command :  npm run build common-form-elements
+
+##Publish 
+1. Go inside /dist folder /dist/common-form-elements/*
+2. Use command : npm publish  OR npm publish --access=public
+3. Use credentials if asked 
+4. Check deployed version https://www.npmjs.com/package/@dicdikshaorg/common-form-elements?activeTab=versions 
