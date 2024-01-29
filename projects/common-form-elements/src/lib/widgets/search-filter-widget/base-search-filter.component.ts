@@ -71,11 +71,22 @@ export abstract class BaseSearchFilterComponent implements OnInit, OnChanges, On
     }
   }
 
-  protected updateQueryParams(searchFilter: IAnySearchFilter, resetAll?: boolean) {
+  protected async updateQueryParams(searchFilter: IAnySearchFilter, resetAll?: boolean) {
+    let urlQuery = new URLSearchParams(window.location.search);
     this.router.navigate([], {
       queryParams: {
         ...(() => {
           const queryParams = cloneDeep(this.activatedRoute.snapshot.queryParams);
+          if(urlQuery.get("selectedTab") != undefined && urlQuery.get("selectedTab")){
+            if(searchFilter.selectedTab == undefined){
+              searchFilter['selectedTab'] = urlQuery.get("selectedTab")
+            } else {
+              searchFilter.selectedTab = urlQuery.get("selectedTab")
+            }
+          }
+          if(urlQuery.get("id") !=undefined && urlQuery.get("id") && searchFilter.id != undefined){
+            searchFilter.id.push(urlQuery.get("id"))
+          }
           const currentFilterData = cloneDeep(this.currentFilter);
           if (resetAll && queryParams) {
             for (let prop in searchFilter) {
@@ -100,6 +111,9 @@ export abstract class BaseSearchFilterComponent implements OnInit, OnChanges, On
       relativeTo: this.activatedRoute.parent,
       replaceUrl: true
     });
+    // const delay = ms => new Promise(res => setTimeout(res, ms));
+    // await delay(10);
+    // // window.location.reload();
   }
 
   protected saveOnResetSearchFilter(aggregatedSearchFilter: IAnySearchFilter) {
