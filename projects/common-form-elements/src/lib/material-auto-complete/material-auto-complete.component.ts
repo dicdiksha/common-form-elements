@@ -98,7 +98,7 @@ export class MaterialAutoCompleteComponent implements OnInit, OnChanges {
       this.selectedOptions.splice(i, 1);
     }
     this.formControlRef.setValue(this.selectedOptions);
-    this.formControlRef.value('');
+
     
   }
 
@@ -153,7 +153,7 @@ export class MaterialAutoCompleteComponent implements OnInit, OnChanges {
         takeUntil(this.dispose$)
       ).subscribe();
     }
-    this.localFrmControl.patchValue('');
+    this.localFrmControl.patchValue(this.default);
     this.setTempValue(this.default);
   }
 
