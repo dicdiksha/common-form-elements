@@ -20,7 +20,6 @@
 <div *ngIf="!config?.templateOptions?.autocomplete" class="sb-input">
   <label class="cfe-multiselect-label input-label" tabindex="0" *ngIf="label" for="{{config?.code}}">{{label}}</label>
   <label class="cfe-multiselect-label" *ngIf="labelHtml" for="{{config?.code}}" [innerHTML]="labelHtml | transposeHtml"></label>
-
     <div class="sb-field">
       <ng-container *ngIf="!isMultiple">
         <mat-form-field id={{config.code}} appearance="fill" class="sb-mat__dropdown w-100 mb-8">
@@ -41,7 +40,7 @@
                 *ngFor="let option of filteredOptions" 
                 [value]="option.value"
                 attr.aria-label="{{option?.label}}">
-                {{option?.label}}
+                {{option?.label | formatText}}
               </mat-option>
             </mat-select>
         </mat-form-field>
@@ -66,7 +65,7 @@
               *ngFor="let option of filteredOptions" 
               [value]="option.value"
               attr.aria-label="{{option?.label}}">
-              {{option?.label}}
+              {{option?.label | formatText}}
             </mat-option>
           </mat-select>
         </mat-form-field>
