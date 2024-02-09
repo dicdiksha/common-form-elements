@@ -13,8 +13,10 @@ export class FormatTextPipe implements PipeTransform {
   transform(text: string): string {
     if (text.startsWith("state") || text.startsWith("State") || text.startsWith("ut") || text.startsWith("UT")) {
       return text.split(' ').map(this.toTitleCase).join(' ');
+    } else if (text.toLowerCase() == 'igot-health' ) {
+      return 'IGOT-Health';
     }
-    else{
+    else {
       return text.toUpperCase();
     }
   }
