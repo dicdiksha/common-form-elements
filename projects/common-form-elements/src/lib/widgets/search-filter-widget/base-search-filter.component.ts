@@ -84,7 +84,7 @@ export abstract class BaseSearchFilterComponent implements OnInit, OnChanges, On
               searchFilter.selectedTab = urlQuery.get("selectedTab")
             }
           }
-          if(urlQuery.get("id") !=undefined && urlQuery.get("id") && searchFilter.id != undefined){
+          if(urlQuery.get("id") !=undefined && urlQuery.get("id") && searchFilter?.id !=null && searchFilter?.id != undefined){
             searchFilter.id.push(urlQuery.get("id"))
           }
           const currentFilterData = cloneDeep(this.currentFilter);
