@@ -9,7 +9,7 @@ export class FormatTextPipe implements PipeTransform {
       return char.toUpperCase();
     });
   }
-
+  
   transform(text: string): string {
     if (text.startsWith("state") || text.startsWith("State") || text.startsWith("ut") || text.startsWith("UT")) {
       return text.split(' ').map(this.toTitleCase).join(' ');
@@ -17,7 +17,7 @@ export class FormatTextPipe implements PipeTransform {
       return 'IGOT-Health';
     }
     else {
-      return text.toUpperCase();
+      return text;
     }
   }
 
