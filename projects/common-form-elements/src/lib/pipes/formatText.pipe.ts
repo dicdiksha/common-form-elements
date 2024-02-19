@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { concat } from 'rxjs';
 
 @Pipe({
   name: 'formatText'
@@ -11,7 +12,7 @@ export class FormatTextPipe implements PipeTransform {
   }
 
   transform(text: string): string {
-    if (text.startsWith("state") || text.startsWith("State") || text.startsWith("ut") || text.startsWith("UT")) {
+    if (text.startsWith("state") || text.startsWith("State")) {
       return text.split(' ').map(this.toTitleCase).join(' ');
     } else if (text.toLowerCase() == 'igot-health' ) {
       return 'IGOT-Health';
@@ -21,6 +22,21 @@ export class FormatTextPipe implements PipeTransform {
       return 'CISCE ';
     } else if (text.toLowerCase() == 'nios' ) {
       return 'NIOS ';
+    }
+    else if(text.toLowerCase() == 'cpd'){
+      return 'CPD'
+    }
+    else if(text.toLowerCase() == 'cbse training'){
+      return 'CBSE Training '
+    }
+    else if(text.toLowerCase() == 'ut (dnh and dd)'){
+      return 'UT (DNH And DD) '
+    }
+    else if( text.startsWith("ut") || text.startsWith("UT")){
+      let text1 = text.split(' ')
+      let firstPart = text1.shift()
+      let secondPart = text1.join(' ')
+      return (firstPart.toUpperCase()+(' ').concat(this.toTitleCase(secondPart)))
     }
     else {
       return this.toTitleCase(text);
