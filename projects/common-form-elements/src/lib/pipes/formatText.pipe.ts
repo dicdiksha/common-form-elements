@@ -26,6 +26,11 @@ export class FormatTextPipe implements PipeTransform {
     else if(text.toLowerCase() == 'cpd'){
       return 'CPD'
     }
+    else if(text.toLowerCase() == 'ncert'){
+      return 'NCERT'
+    } else if(text.toLowerCase() == 'cbse'){
+      return 'CBSE'
+    }
     else if(text.toLowerCase() == 'cbse training'){
       return 'CBSE Training '
     }
