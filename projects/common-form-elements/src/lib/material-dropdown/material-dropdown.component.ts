@@ -37,6 +37,18 @@ export class MaterialDropdownComponent implements OnInit, OnChanges {
   constructor() {}
   
   ngOnInit() {
+    
+
+    if (this.context) {
+      this.context.valueChanges.pipe(
+        tap(( ) => {
+          this.formControlRef.patchValue(null);
+          this.setupOptions();
+        }),
+        takeUntil(this.dispose$)
+      ).subscribe();
+    }
+
     /** START : show BMC value selected for all tab
      */ 
     let urlQuery = new URLSearchParams(window.location.search);
@@ -70,16 +82,6 @@ export class MaterialDropdownComponent implements OnInit, OnChanges {
     /** 
      * END : show BMC value selected for all tab 
      */ 
-
-    if (this.context) {
-      this.context.valueChanges.pipe(
-        tap(( ) => {
-          this.formControlRef.patchValue(null);
-          this.setupOptions();
-        }),
-        takeUntil(this.dispose$)
-      ).subscribe();
-    }
   }
 
   comparer(o1: any, o2: any): boolean {
