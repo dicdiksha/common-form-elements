@@ -121,6 +121,14 @@ export class MultipleDropdownComponent implements OnInit, OnChanges, OnDestroy {
     }
 
     event.stopPropagation();
+    // code for move Other option for district at the top
+    let eElement =document.getElementById("loc-district");
+    let newFirstElement=document.getElementById("top");
+    if(eElement && newFirstElement) {
+      eElement.insertBefore(newFirstElement, eElement.firstChild);
+    }
+    
+
   }
 
   addSelected(option: Map<string, string>) {

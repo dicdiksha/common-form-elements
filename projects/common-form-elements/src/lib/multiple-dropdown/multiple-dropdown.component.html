@@ -66,8 +66,8 @@
       </div>
 
       <div class="cfe-multiselect-dropdown sb-modal-dropdown-web cfe-dropdown-web" *ngIf="platform === 'web'"  [hidden]="!showModal" (click)="showModal=false;">
-        <ul tabindex="-1">
-          <li *ngFor="let option of resolvedOptions; let i=index" [ngClass]="{'selected-option':tempValue.includes(option.get('value'))}">
+        <ul tabindex="-1" id="loc-{{config?.code?.toLowerCase().trim()}}">
+          <li *ngFor="let option of resolvedOptions; let i=index" [ngClass]="{'selected-option':tempValue.includes(option.get('value'))}" id="{{option.get('label') === 'Other' && config?.code?.toLowerCase().trim() === 'district'? 'top':option.get('label')}}">
             <div (click)="addSelected(option); onSubmit()" tabindex="0">
               <span>{{option.get('label')}}</span>
             </div>
