@@ -51,34 +51,34 @@ export class MaterialDropdownComponent implements OnInit, OnChanges {
 
     /** START : show BMC value selected for all tab
      */ 
-    let urlQuery = new URLSearchParams(window.location.search);
-    if(urlQuery.get("selectedTab") === 'all'){
-      const config = {};
-      urlQuery.forEach((e, k) => {
-          if (config[k] && config[k].length) {
-              config[k].push(e)
-          } else {
-              config[k] = []
-              config[k].push(e);
-          }
-      })
+    // let urlQuery = new URLSearchParams(window.location.search);
+    // if(urlQuery.get("selectedTab") === 'all'){
+    //   const config = {};
+    //   urlQuery.forEach((e, k) => {
+    //       if (config[k] && config[k].length) {
+    //           config[k].push(e)
+    //       } else {
+    //           config[k] = []
+    //           config[k].push(e);
+    //       }
+    //   })
 
-      if(urlQuery.get('se_boards') != null && this.config.code == 'se_boards'){
-        this.selectedOptions = config['se_boards']
-      }
-      if(urlQuery.get('se_mediums') != null && this.config.code == 'se_mediums'){
-        this.selectedOptions = config['se_mediums']
-      }
-      if(urlQuery.get('se_gradeLevels') != null && this.config.code == 'se_gradeLevels'){
-        this.selectedOptions = config['se_gradeLevels']
-      }
-      if(urlQuery.get('se_subjects') != null && this.config.code == 'se_subjects'){
-        this.selectedOptions = config['se_subjects']
-      }
-      if(urlQuery.get('primaryCategory') != null && this.config.code == 'primaryCategory'){
-        this.selectedOptions = config['primaryCategory']
-      }
-    }
+    //   if(urlQuery.get('se_boards') != null && this.config.code == 'se_boards'){
+    //     this.selectedOptions = config['se_boards']
+    //   }
+    //   if(urlQuery.get('se_mediums') != null && this.config.code == 'se_mediums'){
+    //     this.selectedOptions = config['se_mediums']
+    //   }
+    //   if(urlQuery.get('se_gradeLevels') != null && this.config.code == 'se_gradeLevels'){
+    //     this.selectedOptions = config['se_gradeLevels']
+    //   }
+    //   if(urlQuery.get('se_subjects') != null && this.config.code == 'se_subjects'){
+    //     this.selectedOptions = config['se_subjects']
+    //   }
+    //   if(urlQuery.get('primaryCategory') != null && this.config.code == 'primaryCategory'){
+    //     this.selectedOptions = config['primaryCategory']
+    //   }
+    // }
     /** 
      * END : show BMC value selected for all tab 
      */ 
