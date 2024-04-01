@@ -63,7 +63,6 @@ export class DynamicInputFieldComponent implements OnInit {
       array.push(el.inputVal);
     });
     this.formControlRef.patchValue(array);
-    console.log(this.formControlRef);
   }
 
 

@@ -33,7 +33,7 @@
               [formControl]="localFrmControlRef"
               [(ngModel)]="selectedOptions"
               [compareWith]="comparer" 
-              (selectionChange)="singleOptionSelected($event)">
+              (selectionChange)="singleOptionSelected($event)" (opened)="selectOpend(formControlRef?.value)" (closed)="selectClosed(formControlRef?.value,config.code)" >
                 <mat-option 
                 class="mat-dropdown__options" 
                 role="option" 

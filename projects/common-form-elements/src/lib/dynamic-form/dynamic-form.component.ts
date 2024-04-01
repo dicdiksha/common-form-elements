@@ -445,7 +445,6 @@ export class DynamicFormComponent implements OnInit, OnChanges, OnDestroy  {
 
     checkFields(validationType, control: AbstractControl) {
     if (validationType.type === 'noOfFields' && control.value.length > +validationType.value) {
-      console.log(validationType.message);
       return { noOfFeilds: true };
     }
   }

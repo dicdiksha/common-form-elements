@@ -17,8 +17,6 @@ export class CheckboxComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('label', this.label);
-    console.log('labelHtml', this.labelHtml);
   }
 
   handleLinkClick(event: MouseEvent) {

@@ -19,11 +19,11 @@ export class DialcodeService implements DialcodeCursor {
     }
 
     clearDialCode() {
-        console.log('Clear dialcode');
+        // console.log('Clear dialcode');
     }
 
     changeDialCode(dialcode) {
-        console.log('changeDialCode', dialcode);
+        // console.log('changeDialCode', dialcode);
     }
 
     validateDialCode(dialcode) {

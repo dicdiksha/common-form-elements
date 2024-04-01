@@ -54,7 +54,6 @@ export class DynamicDateComponent implements OnInit, OnDestroy, AfterViewInit {
         this.asyncValidation.marker,
         this.validationTrigger.nativeElement
       ));
-      console.log(this.formControlRef);
     }
   }
 

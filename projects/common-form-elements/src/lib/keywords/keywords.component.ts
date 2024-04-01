@@ -31,8 +31,7 @@ export class KeywordsComponent implements OnInit,OnChanges,OnDestroy {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.options);
-   
+    // console.log(this.options);
   }
 
   ngOnInit() {

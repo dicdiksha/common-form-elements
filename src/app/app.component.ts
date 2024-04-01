@@ -50,7 +50,6 @@ export class AppComponent implements OnInit {
         let date = moment_(event.startDate).format("YYYY-MM-DD[T]HH:mm:ss.SSS[Z]");
         event.startDate=date;
       }
-    console.log(event);
   }
 
   statusChanges(event) {
@@ -368,12 +367,10 @@ export class AppComponent implements OnInit {
   }
 
   setEvidence(control, depends: FormControl[], formGroup: FormGroup, loading, loaded) {
-    console.log(control);
     control.isVisible = 'no';
     control.range = evidenceMimeType;
     const response = merge(..._.map(depends, depend => depend.valueChanges)).pipe(
         switchMap((value: any) => {
-             console.log(value);
             if (!_.isEmpty(value) && _.toLower(value) === 'yes') {
                 control.isVisible = 'yes';
                 return of({range: evidenceMimeType});
@@ -387,7 +384,6 @@ export class AppComponent implements OnInit {
   }
 
   setEcm(control, depends: FormControl[], formGroup: FormGroup, loading, loaded){
-    console.log(control);
     control.isVisible = 'no';
     control.options = ecm;
     const response = merge(..._.map(depends, depend => depend.valueChanges)).pipe(
@@ -405,11 +401,9 @@ export class AppComponent implements OnInit {
   }
 
   setAllowEcm(control, depends: FormControl[], formGroup: FormGroup, loading, loaded){
-    console.log(control);
     control.isVisible = 'no';
     const response = merge(..._.map(depends, depend => depend.valueChanges)).pipe(
         switchMap((value: any) => {
-             console.log(value);
              if (!_.isEmpty(value) && _.toLower(value) === 'self' ){
                 control.isVisible = 'no';
                 return of(null)
