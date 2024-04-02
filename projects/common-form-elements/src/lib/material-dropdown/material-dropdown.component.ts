@@ -68,7 +68,7 @@ export class MaterialDropdownComponent implements OnInit, OnChanges {
   selectClosed(newSelectedValue, selectedField) {
     const pathname = window.location.pathname.split('/')[1];
     if((this.selectedValue === newSelectedValue) && (selectedField == "medium" || selectedField == "se_mediums" || selectedField == "se_boards" || selectedField == "board" || selectedField == "se_gradeLevels" || selectedField == "gradeLevel")){
-      if(frameworkList.includes(pathname) || frameworkList.includes(pathname.toLowerCase())){
+      if((frameworkList.includes(pathname) || frameworkList.includes(pathname.toLowerCase())) && (selectedField == "se_boards" || selectedField == "board")){
         return
       }
       this.formControlRef.patchValue(null);
