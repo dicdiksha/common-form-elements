@@ -67,7 +67,7 @@ export class MaterialDropdownComponent implements OnInit, OnChanges {
   }
 
   selectClosed(newSelectedValue, selectedField) {
-    if((this.selectedValue === newSelectedValue) && (selectedField == "medium" || selectedField == "gradeLevel")){
+    if((this.selectedValue === newSelectedValue) && (selectedField == "medium" || selectedField == "se_mediums" || selectedField == "se_boards" || selectedField == "board" || selectedField == "se_gradeLevels" || selectedField == "gradeLevel")){
       this.formControlRef.patchValue(null);
       this.localFrmControlRef.patchValue(null);
       this.selectedOptions = []
