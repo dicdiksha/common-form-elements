@@ -3,14 +3,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { from, Subject } from 'rxjs';
 import { tap, takeUntil } from 'rxjs/operators';
 import { FieldConfig, FieldConfigInputType, FieldConfigInputTypeOptionsModelMap, FieldConfigOptionsBuilder } from '../common-form-config';
-
+const frameworkList = ["an","ar","apekx","as","br","cg","ch","ga","gj","hp","hr","jh","jk","ka","kl","lk","mitra","ml","mn","mp","mz","nl","od","pb","py","rj","sk","tn","tp","ts","uk","up","DD","ld","dl","nios","cbse","ncert","cisce","IGOT-Health","CBSE/NCERT"]
 @Component({
   selector: 'app-material-dropdown',
   templateUrl: './material-dropdown.component.html',
   styleUrls: ['./material-dropdown.component.scss']
 })
 export class MaterialDropdownComponent implements OnInit, OnChanges {
-
   @Input() extras?: FieldConfigInputTypeOptionsModelMap[FieldConfigInputType.SELECT];
   @Input() disabled?: boolean;
   @Input() options: any;
@@ -67,7 +66,11 @@ export class MaterialDropdownComponent implements OnInit, OnChanges {
   }
 
   selectClosed(newSelectedValue, selectedField) {
+    const pathname = window.location.pathname.split('/')[1];
     if((this.selectedValue === newSelectedValue) && (selectedField == "medium" || selectedField == "se_mediums" || selectedField == "se_boards" || selectedField == "board" || selectedField == "se_gradeLevels" || selectedField == "gradeLevel")){
+      if(frameworkList.includes(pathname) || frameworkList.includes(pathname.toLowerCase())){
+        return
+      }
       this.formControlRef.patchValue(null);
       this.localFrmControlRef.patchValue(null);
       this.selectedOptions = []
