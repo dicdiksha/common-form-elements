@@ -37,6 +37,7 @@
                 <mat-option 
                 class="mat-dropdown__options" 
                 role="option" 
+                (click)="selectOptionValue(option.value,config.code)"
                 *ngFor="let option of filteredOptions" 
                 [value]="option.value"
                 attr.aria-label="{{option?.label}}">
