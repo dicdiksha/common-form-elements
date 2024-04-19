@@ -11,33 +11,14 @@ export class FormatTextPipe implements PipeTransform {
     });
   }
 
-  transform(text: string): string {
-    if (text.startsWith("state") || text.startsWith("State")) {
-      return text.split(' ').map(this.toTitleCase).join(' ');
-    } else if (text.toLowerCase() == 'igot-health' ) {
-      return 'IGOT-Health';
-    } else if (text.toLowerCase() == 'cbse/ncert' ) {
-      return 'CBSE/NCERT ';
-    } else if (text.toLowerCase() == 'cisce' ) {
-      return 'CISCE ';
-    } else if (text.toLowerCase() == 'nios' ) {
-      return 'NIOS ';
-    }
-    else if(text.toLowerCase() == 'cpd'){
-      return 'CPD'
-    }
-    else if(text.toLowerCase() == 'ncert'){
-      return 'NCERT'
-    } else if(text.toLowerCase() == 'cbse'){
-      return 'CBSE'
-    }
-    else if(text.toLowerCase() == 'cbse training'){
-      return 'CBSE Training '
-    }
-    else if(text.toLowerCase() == 'ut (dnh and dd)'){
-      return 'UT (DNH And DD) '
-    }
-    else if( text.startsWith("ut") || text.startsWith("UT")){
+  upperCaseObj = ["igot-health","cbse/ncert","cbse","ncert","cisce","nios","cpd","ut (dnh and dd)", "ict", "nss volunteers", "aas pass (evs)", "craft", "ecce", "evs", "gka", "ict", "tamil (at)", "tamil (bt)","spcc", "nyks","nursing", "nep", "manipuri lairek laisu (meetei mayek)", "looking around (evs)", "kannada (bt)", "ircs"]
+
+  transform(text: string):string{   
+    if(this.upperCaseObj.includes(text)){
+      return text.toUpperCase();
+    } else if(text.toLowerCase() ==='cbse training'){
+      return 'CBSE Training'
+    } else if( text.startsWith("ut") || text.startsWith("UT")){
       let text1 = text.split(' ')
       let firstPart = text1.shift()
       let secondPart = text1.join(' ')
@@ -47,5 +28,4 @@ export class FormatTextPipe implements PipeTransform {
       return this.toTitleCase(text);
     }
   }
-
 }
