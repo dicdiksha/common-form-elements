@@ -11,8 +11,8 @@ export class FormatTextPipe implements PipeTransform {
     });
   }
 
-  upperCaseObj = ["igot-health","cbse/ncert","cbse","ncert","cisce","nios","cpd","ut (dnh and dd)", "ict", "nss volunteers", "aas pass (evs)", "craft", "ecce", "evs", "gka", "ict", "tamil(at)", "tamil(bt)","spcc", "nyks","nursing", "nep", "manipuri lairik laisu (meetei mayek)", "looking around (evs)", "kannada(bt)", "ircs"];
-  titleCaseObj = ["cbse training","evs part 1","evs part 2","ict in education"];
+  upperCaseObj = ["igot-health","cbse/ncert","cbse","ncert","cisce","nios","cpd","ut (dnh and dd)", "ict", "nss", "aas pass (evs)", "craft", "ecce", "evs", "gka", "ict", "tamil(at)", "tamil(bt)","spcc", "nyks","nursing", "nep", "manipuri lairik laisu (meetei mayek)", "looking around (evs)", "kannada(bt)", "ircs"];
+  titleCaseObj = ["cbse training","evs part 1","evs part 2","ict in education", "nss volunteers"];
  
   transform(text: string):string{  
     if(this.upperCaseObj.includes(text.toLowerCase())){
