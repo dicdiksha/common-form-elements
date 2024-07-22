@@ -20,6 +20,7 @@ export class TextboxComponent implements OnInit, AfterViewInit, OnChanges {
   @Output() inputIconClick = new EventEmitter();
   @ViewChild('validationTrigger') validationTrigger: ElementRef;
   image: string;
+  @Input() disabled?: boolean =false;
 
   constructor() {
   }
