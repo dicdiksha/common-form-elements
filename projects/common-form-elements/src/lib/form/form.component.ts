@@ -87,7 +87,7 @@ export class FormComponent implements OnInit, OnChanges, OnDestroy {
         let noneClass: any = [];
 
         for(let i = 0; i < this.sortedGradesArray.length; i++) {
-          if(this.sortedGradesArray[i].value.includes('class')) {
+          if(this.sortedGradesArray[i].value.includes('class') || this.sortedGradesArray[i].value.includes('Class')) {
             onlyClass.push(this.sortedGradesArray[i]);
           }
           else {
